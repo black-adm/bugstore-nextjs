@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <h1>inicio do projeto</h1>
+    <h1 className="text-dark-purple text-4xl font-bold">
+      inicio do projeto
+    </h1>
   )
 }
