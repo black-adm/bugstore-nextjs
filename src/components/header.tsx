@@ -24,9 +24,9 @@ export function Header() {
                 </form>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center gap-4">
                 <div className="flex items-center gap-2">
-                    <ShoppingCart className="h-6 w-6 text-light-purple hover:text-medium-violet" />
+                    <ShoppingCart className="h-5 w-5 text-light-purple hover:text-medium-violet" />
                     <span className="text-sm">(0)</span>
                 </div>
                 <div className="w-px h-4 bg-medium-violet" />
