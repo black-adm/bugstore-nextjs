@@ -19,12 +19,12 @@ export function Footer() {
                                     src="/logo.png"
                                     alt="logo"
                                 />
-                                <span className="tracking-wide text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-purple-400 to-light-purple">
+                                <span className="tracking-wide text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-purple-300 to-light-purple">
                                     bugstore
                                 </span>
                             </Link>
 
-                            <p className="mt-2 mb-4 text-primary-grey tracking-wide text-sm font-medium">
+                            <p className="mt-2 mb-4 text-primary-grey tracking-wide text-xs font-normal lg:text-sm lg:font-medium">
                                 A sua loja online de roupas e utilitários nerds.
                             </p>
 
@@ -79,7 +79,7 @@ export function Footer() {
                                 height={34}
                             />
                         </span>
-                        <p className="mt-2 mb-4 text-primary-grey text-sm font-medium">
+                        <p className="mt-2 mb-4 text-primary-grey tracking-wide text-xs font-normal lg:text-sm lg:font-medium">
                             Rocketseat ©<span id="year"> 2023</span> -
                             Desenvolvido  por Matheus Roberto.
                         </p>

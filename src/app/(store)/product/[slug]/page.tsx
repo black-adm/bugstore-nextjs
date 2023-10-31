@@ -23,10 +23,19 @@ async function getProduct(slug: string): Promise<Product> {
 
 export async function generateMetadata({ params }: ProductProps): Promise<Metadata> {
     const product = await getProduct(params.slug)
-    
+
     return {
         title: product.title,
     }
+}
+
+export async function generateStaticParams() {
+    const response = await api('/products/featured')
+    const products: Product[] = await response.json()
+
+    return products.map(product => {
+        return { slug: product.slug }
+    })
 }
 
 export default async function ProductPage({ params }: ProductProps) {
@@ -54,7 +63,7 @@ export default async function ProductPage({ params }: ProductProps) {
                 </p>
 
                 <div className="mt-8 flex items-center gap-3">
-                    <span className="inline-block items-center justify-center rounded-full bg-light-purple px-5 py-2.5 font-semibold">
+                    <span className="inline-block items-center justify-center rounded-full bg-light-purple px-5 py-2.5 font-semibold cursor-pointer">
                         {product.price.toLocaleString('pt-BR', {
                             style: 'currency',
                             currency: 'BRL',
@@ -106,7 +115,7 @@ export default async function ProductPage({ params }: ProductProps) {
 
                 <button
                     type="button"
-                    className="w-full gap-x-2 mt-8 h-12 flex items-center justify-center text-center rounded-full bg-primary-white border-2 border-violet-800 font-semibold text-medium-violet hover:bg-light-purple hover:border-none hover:text-white"
+                    className="w-full gap-x-2 mt-8 h-12 flex items-center justify-center text-center rounded-full bg-primary-white border-2 border-violet-800 font-semibold sm:text-sm lg:text-base text-medium-violet hover:bg-light-purple hover:border-none hover:text-white"
                 >
                     Adicionar ao carrinho
                     <svg
