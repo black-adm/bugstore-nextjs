@@ -85,7 +85,7 @@ export function Footer() {
                         </p>
 
                         <div className="flex-row my-4 space-x-1">
-                            <p className="text-primary-grey/30 tracking-wider text-xs font-medium">
+                            <p className="text-primary-grey/40 tracking-wider text-xs font-medium">
                                 Guarulhos, São Paulo - Brasil
                             </p>
                         </div>

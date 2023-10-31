@@ -8,8 +8,10 @@ const oxanium = Oxanium({
 })
 
 export const metadata: Metadata = {
-  title: 'Bugstore',
-  description: 'Sua loja de utilitários nerd.',
+  title: {
+    template: 'Bugstore | %s',
+    default: 'Bugstore'
+  }
 }
 
 export default function RootLayout({
