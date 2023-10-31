@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: ProductProps) {
 
                 <button
                     type="button"
-                    className="w-full gap-x-2 mt-8 h-12 flex items-center justify-center text-center rounded-full bg-medium-violet border-2 border-light-purple font-semibold text-purple-200 hover:bg-light-purple hover:border-none hover:text-white"
+                    className="w-full gap-x-2 mt-8 h-12 flex items-center justify-center text-center rounded-full bg-primary-white border-2 border-violet-800 font-semibold text-medium-violet hover:bg-light-purple hover:border-none hover:text-white"
                 >
                     Adicionar ao carrinho
                     <svg

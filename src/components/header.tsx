@@ -8,8 +8,8 @@ export function Header() {
             <div className="flex items-center gap-5">
                 <Link href="/" className="inline-flex items-center">
                     <Image
-                        width="50"
-                        height="50"
+                        width={50}
+                        height={50}
                         src="/logo.png"
                         alt="logo"
                     />
