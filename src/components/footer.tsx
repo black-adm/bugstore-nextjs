@@ -81,7 +81,7 @@ export function Footer() {
                         </span>
                         <p className="mt-2 mb-4 text-primary-grey tracking-wide text-xs font-normal lg:text-sm lg:font-medium">
                             Rocketseat ©<span id="year"> 2023</span> -
-                            Desenvolvido  por Matheus Roberto.
+                            Desenvolvido  por <strong>Matheus Roberto</strong>.
                         </p>
 
                         <div className="flex-row my-4 space-x-1">
