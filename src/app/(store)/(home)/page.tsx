@@ -4,7 +4,12 @@ import Image from "next/image"
 import Link from "next/link"
 
 async function getFeaturedProducts(): Promise<Product[]> {
-    const response = await api("/products/featured")
+    const response = await api("/products/featured", {
+        next: {
+            revalidate: 300,
+        }
+    })
+
     const products = await response.json()
     return products
 }
@@ -13,9 +18,9 @@ export default async function Home() {
     const [highLightedProduct, ...otherProducts] = await getFeaturedProducts()
 
     return (
-        <div className="px-5 pt-8">
+        <div className="px-5 pt-16">
             <h1 className="pt-4 text-2xl font-bold text-primary-white tracking-wide">
-                Moletons em alta este mês 🔥
+                Moletom e camiseta em alta este mês 🔥
             </h1>
 
             <div className="mt-6 grid max-h-[860px] grid-cols-9 grid-row-6 gap-6">

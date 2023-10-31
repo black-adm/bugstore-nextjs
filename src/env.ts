@@ -11,7 +11,6 @@ if (!parsedEnv.success) {
     'Invalid environment variables',
     parsedEnv.error.flatten().fieldErrors,
   )
-
   throw new Error('Invalid environment variables.')
 }
 
