@@ -1,11 +1,32 @@
+import { api } from "@/data/api";
+import { Product } from "@/data/types/product";
 import Image from "next/image";
 
-export default function ProductPage() {
+interface ProductProps {
+    params: {
+        slug: string
+    }
+}
+
+async function getProduct(slug: string): Promise<Product> {
+    const response = await api(`/products/${slug}`, {
+        next: {
+            revalidate: 300
+        },
+    })
+
+    const product = await response.json()
+    return product
+}
+
+export default async function ProductPage({ params }: ProductProps) {
+    const product = await getProduct(params.slug)
+
     return (
         <div className="relative grid max-h-[860px] grid-cols-3">
             <div className="col-span-2 overflow-hidden">
                 <Image
-                    src="/moletom-ia-p-devs.png"
+                    src={product.image}
                     alt="Moletom IA"
                     width={1000}
                     height={1000}
@@ -15,19 +36,28 @@ export default function ProductPage() {
 
             <div className="flex flex-col justify-center items-center text-center px-12">
                 <h1 className="text-3xl font-bold leading-tight">
-                    Moletom IA para Dev's
+                    {product.title}
                 </h1>
 
                 <p className="mt-2.5 leading-relaxed text-primary-grey/80">
-                    Moletom fabricado com 88% de algodão e 12% de poliéster.
+                    {product.description}
                 </p>
 
                 <div className="mt-8 flex items-center gap-3">
                     <span className="inline-block items-center justify-center rounded-full bg-light-purple px-5 py-2.5 font-semibold">
-                        R$129
+                        {product.price.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0
+                        })}
                     </span>
                     <span className="text-sm text-primary-grey">
-                        Em até 12x s/ juros de R$10,75
+                        Em até 12x de <strong>
+                            {(product.price / 12).toLocaleString('pt-BR', {
+                                style: 'currency',
+                                currency: 'BRL'
+                            })}</strong> s/juros.
                     </span>
                 </div>
 
