@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Search } from "lucide-react";
+import { SearchForm } from "./search-form";
 import { CartWidget } from "./cart-widget";
 
 export function Header() {    
@@ -19,15 +19,7 @@ export function Header() {
                         bugstore
                     </span>
                 </Link>
-
-                <form className="ml-8 bg-primary-white flex w-[320px] items-center gap-3 rounded-full px-4 py-2 ring-light-purple">
-                    <Search className="h-5 w-5 text-medium-violet" />
-                    <input
-                        name="search-input"
-                        placeholder="Buscar produtos"
-                        className="flex-1 bg-primary-white text-sm text-dark-violet outline-none placeholder:text-dark-violet"
-                    />
-                </form>
+                <SearchForm />
             </div>
 
             <div className="flex items-center justify-center gap-4">
