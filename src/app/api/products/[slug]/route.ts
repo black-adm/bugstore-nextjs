@@ -1,7 +1,8 @@
 import { z } from 'zod'
 import data from '../../data.json'
 
-export async function GET(_: Request,
+export async function GET(
+    _: Request,
     { params }: { params: { slug: string } }
 ) {
     const slug = z.string().parse(params.slug)
@@ -13,6 +14,5 @@ export async function GET(_: Request,
             { status: 400 }
         )
     }
-
     return Response.json(product)
 }
