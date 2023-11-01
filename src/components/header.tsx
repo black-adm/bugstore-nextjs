@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Search, ShoppingCart } from "lucide-react";
 
-export function Header() {
+import { Search } from "lucide-react";
+import { CartWidget } from "./cart-widget";
+
+export function Header() {    
     return (
         <div className="flex items-center justify-between px-10">
             <div className="flex items-center gap-5">
@@ -29,10 +31,8 @@ export function Header() {
             </div>
 
             <div className="flex items-center justify-center gap-4">
-                <div className="flex items-center gap-2">
-                    <ShoppingCart className="h-5 w-5 text-light-purple hover:text-medium-violet" />
-                    <span className="text-sm">(0)</span>
-                </div>
+                <CartWidget />
+
                 <div className="w-px h-4 bg-medium-violet" />
 
                 <Link href="/" className="flex items-center gap-2 hover:underline hover:text-medium-violet">
