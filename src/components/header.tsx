@@ -20,7 +20,11 @@ export function Header() {
 
                 <form className="ml-8 bg-primary-white flex w-[320px] items-center gap-3 rounded-full px-4 py-2 ring-light-purple">
                     <Search className="h-5 w-5 text-medium-violet" />
-                    <input placeholder="Buscar produtos" className="flex-1 bg-primary-white text-sm text-dark-violet outline-none placeholder:text-dark-violet" />
+                    <input
+                        name="search-input"
+                        placeholder="Buscar produtos"
+                        className="flex-1 bg-primary-white text-sm text-dark-violet outline-none placeholder:text-dark-violet"
+                    />
                 </form>
             </div>
 
