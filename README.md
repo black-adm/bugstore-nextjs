@@ -14,9 +14,9 @@
  Clone o repositório e acesse a raiz do projeto. Instale as dependências com o comando `pnpm install`.
 
 ## Configurações locais
- Crie um arquivo na raiz do projeto chamado `.env.local`. Adicione `http://localhost:3000` nas variáveis de ambiente `NEXT_PUBLIC_API_BASE_URL` e `APP_URL`.
+ Crie um arquivo na raiz do projeto chamado `.env.local`. Crie duas variáveis de ambiente chamadas `NEXT_PUBLIC_API_BASE_URL` e `APP_URL`, adicione `http://localhost:3000` como valor.
 
 ## Iniciando o servidor local
  Digite o comando `pnpm run dev`.
 
-Abra no navegador [http://localhost:3000](http://localhost:3000).
+Abra no navegador no endereço : [http://localhost:3000](http://localhost:3000).
